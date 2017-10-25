@@ -1,16 +1,15 @@
 var express = require('express');
 var router = express.Router();
+var weRes = require('../common/util/weRes');
 var app = express();
 /* GET home page. */
 router.get('/', function (req, res) {
     res.render('index', {title: 'Login'});
 });
-router.get('/login', function (req, res) {
-    var name = req.query.name;
-    var password = req.query.password;
+router.post('/login', function (req, res) {
+    var name = req.body.name;
+    var password = req.body.password;
     var data = {name:name,password:password};
-    // res.send(JSON.stringify(data));
-    res.render('info',data);
+    weRes.exportJson(res,null,data);
 });
-
 module.exports = router;
