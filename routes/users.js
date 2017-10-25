@@ -14,5 +14,4 @@ router.get('/showAll', function(req, res) {
         }
     })
 });
-
 module.exports = router;
