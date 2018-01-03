@@ -4,6 +4,5 @@ var that = {
         callback(null,users);
     }
 }
-
 //这是接口
 module.exports= that;
