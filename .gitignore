@@ -1,4 +1,4 @@
 .idea/
+node_modules/
 public/
 *.iml
-node_modules/
