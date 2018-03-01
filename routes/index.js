@@ -4,7 +4,12 @@ var weRes = require('../common/util/weRes');
 var app = express();
 var async = require('async');
 var util = require('util');
+var logger = require('fluent-logger');
 /* GET home page. */
+router.get('/test', function (request, response) {
+    logger.emit('follow', { from: ' userA ', to: ' userB ' });
+    response.send('Hello World');
+});
 router.get('/', function (req, res) {
     res.render('index', { title: 'Login' });
 });
