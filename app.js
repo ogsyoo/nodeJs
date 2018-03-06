@@ -8,6 +8,8 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var gsy = require('./routes/gsy');
 var redis = require('./routes/redis');
+var fluentd = require('./routes/fluentd');
+var elas = require('./routes/elastic');
 var app = express();
 var logger = require('fluent-logger');
 var router = express.Router();
@@ -29,6 +31,8 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/gsy', gsy);
 app.use('/redis', redis);
+app.use('/fluentd.test',fluentd);
+app.use('/elas',elas);
 
 app.use(function (req, res, next) {
   var err = new Error('Not Found');
